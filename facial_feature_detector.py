@@ -17,13 +17,13 @@ def _shape_to_np(shape):
 def get_landmarks(img):
     # if not automatically downloaded, get it from:
     # http://sourceforge.net/projects/dclib/files/dlib/v18.10/shape_predictor_68_face_landmarks.dat.bz2
-    predictor_path = this_path + "/dlib_models/shape_predictor_68_face_landmarks.dat"
+    predictor_path = this_path + "shape_predictor_68_face_landmarks.dat"
     detector = dlib.get_frontal_face_detector()
     predictor = dlib.shape_predictor(predictor_path)
 
     lmarks = []
     dets = detector(img, 1)
-    print("Number of faces detected: {}".format(len(dets)))
+    #print("Number of faces detected: {}".format(len(dets)))
     shapes = []
     for k, det in enumerate(dets):
         shape = predictor(img, det)
